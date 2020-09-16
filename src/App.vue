@@ -1,19 +1,23 @@
 <template>
   <div id="app">
     <!-- <img alt="Vue logo" src="./assets/logo.png"> --> 
-    
-    <Skills/>
+      <nav>
+        <router-link to="/">Home</router-link>
+        <router-link to="/about/sule">About</router-link>
+      </nav>
+    <router-view/>
+    <!-- <Skills/> -->
   </div>
 </template>
 
 <script>
-import Skills from './components/Skills.vue'
+// import Skills from './components/Skills.vue'
 
 export default {
   name: 'App',
-  components: {
-    Skills
-  }
+  // components: {
+  //   Skills
+  // }
 }
 </script>
 
@@ -27,13 +31,30 @@ export default {
     grid-template-rows: auto;
     justify-items: center;
     align-items: center;
-  }
+    padding-top: 50px;
+  } 
+
   body, html {
     margin: 0;
     height: 100%;
   }
+
   #app {
       width: 50%;
+  }
+
+  nav {
+    padding: 20px 20px 20px 0;
+  }
+
+  nav a {
+    padding: 10px;
+    text-decoration: none;
+    background: #fff;
+    border-radius: 3px;
+    color: rgb(0, 110, 255);
+    font-weight: bold;
+    margin-right: 15px;
   }
   /* #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;

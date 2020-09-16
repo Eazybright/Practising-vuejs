@@ -37,7 +37,9 @@
         <ValidationProvider rules="min:3" v-slot="v">
           <input type="text" placeholder="Enter a skill you have.." v-model="skill" name="skill"><br>
           <!-- <input v-model="value" type="text"> -->
-          <span>{{ v.errors[0] }}</span>
+          <transition name="alert-in" enter-active-class="animated flipInX" leave-active-class="animated flipOutX">
+            <span class="alert">{{ v.errors[0] }}</span>
+          </transition>
         </ValidationProvider>
 
         
@@ -48,7 +50,10 @@
 
       <div class="skill-set">
         <ul>
-          <li v-for="(data, index) in skills" :key='index'>{{data.skill}}</li>
+          <li v-for="(data, index) in skills" :key='index'>
+            {{data.skill}}
+            <i class="fa fa-minus-circle" v-on:click="remove(index)"></i>
+          </li>
         </ul>
         <p>These are the skills that you possess.</p>
       </div>
@@ -98,13 +103,12 @@ export default {
   },
    methods : {
     addSkill(){
-        // if(this.$errors){
-        //   console.log('error')
-        // }
-        console.log(this.$v)
-        // this.skills.push({skill: this.skill});
-        // this.skill = '';
+        this.skills.push({skill: this.skill});
+        this.skill = '';
         // console.log('The checkbox value is: '+this.checked)
+    },
+    remove(id) {
+      this.skills.splice(id, 1);
     }
   },
   components: {
@@ -118,6 +122,14 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  @import "https://cdn.jsdelivr.net/npm/animate.css@3.5.1";
+  @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+
+  ul li i{
+    float: right;
+    cursor: pointer;
+  }
+
   .container input {
     width: calc(100% - 40px);
     border: 0;
