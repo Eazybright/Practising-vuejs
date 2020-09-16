@@ -32,6 +32,20 @@
     </div>
 
     <div class="container">
+      <!-- form validation -->
+      <form @submit.prevent="addSkill">
+        <ValidationProvider rules="min:3" v-slot="v">
+          <input type="text" placeholder="Enter a skill you have.." v-model="skill" name="skill"><br>
+          <!-- <input v-model="value" type="text"> -->
+          <span>{{ v.errors[0] }}</span>
+        </ValidationProvider>
+
+        
+        <!-- <p class="alert" v-if="errors.has('skill')">{{ errors.first('skill') }}</p> -->
+        <!-- {{ skill }} -->
+        <!-- <input type="checkbox" id="checkbox" v-model="checked"> -->
+      </form>
+
       <div class="skill-set">
         <ul>
           <li v-for="(data, index) in skills" :key='index'>{{data.skill}}</li>
@@ -43,12 +57,25 @@
 </template>
 
 <script>
+import { ValidationProvider, extend } from 'vee-validate'
+
+extend('min', {
+  validate(value, {length}) {
+    return value.length >= length;
+  },
+  params: ['length'],
+  message: 'The {_field_} field must have at least {length} characters'
+});
+
+
 export default {
   name: 'Skills',
   data() {
     return {
       name: "Vuejs Course Intro",
       btnState: true,
+      // checked:false,
+      skill: '',
       skills: [
         { "skill": "Vue.js" },
         { "skill": "Frontend Developer" }
@@ -68,7 +95,21 @@ export default {
       }
       // showClass: true
     }
-  }
+  },
+   methods : {
+    addSkill(){
+        // if(this.$errors){
+        //   console.log('error')
+        // }
+        console.log(this.$v)
+        // this.skills.push({skill: this.skill});
+        // this.skill = '';
+        // console.log('The checkbox value is: '+this.checked)
+    }
+  },
+  components: {
+    ValidationProvider
+  },
   // props: {
   //   // msg: String
   // }
@@ -77,6 +118,15 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  .container input {
+    width: calc(100% - 40px);
+    border: 0;
+    padding: 20px;
+    font-size: 1.3em;
+    background-color: #323333;
+    color: #687F7F;
+  }
+
   .skill-set {
     background: #fff;
   }
