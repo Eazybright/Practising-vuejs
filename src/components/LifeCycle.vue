@@ -1,9 +1,9 @@
 <template>
     <div id="app"> 
-        <ul>
+        <!-- <ul>
             <li v-for="(person,index) in people$" :key="index"> {{person}}
             </li>
-        </ul>
+        </ul> -->
 
          <div class="about">
             <h1>Hello {{ name }}, this is an lifecycle page</h1>
@@ -13,7 +13,7 @@
 
 <script>
 // Required to create an Observable stream
-import { Observable } from 'rxjs'
+// import { Observable } from 'rxjs'
 // import { of } from 'rxjs/add/observable/of'
 
 // New Observable stream of string array values
@@ -32,16 +32,16 @@ export default  {
 
     mounted() {
         console.log(`Mounted: Hello ${this.name}`)
-        const people$ = Observable.of(['Paul', 'Katie', 'Bob'])
-        return {
-            people$
-        }
+        
     },
     // methods: {
         
     // },
     // subscriptions() {
-       
+    //    const people$ = Observable.of(['Paul', 'Katie', 'Bob'])
+    //     return {
+    //         people$
+    //     }
     // }
     // subscriptions: {
     //     people$
