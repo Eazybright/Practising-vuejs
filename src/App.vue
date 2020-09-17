@@ -11,7 +11,7 @@
 </template>
 
 <script>
-// import Skills from './components/Skills.vue'
+// import Skills from './components/Skills.vue s9kBhuzqwzvQfvRCkgX-'
 
 export default {
   name: 'App',
