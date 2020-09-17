@@ -4,6 +4,7 @@
       <nav>
         <router-link to="/">Home</router-link>
         <router-link to="/about/sule">About</router-link>
+        <router-link to="/lifecycle">LifeCycle</router-link>
       </nav>
     <router-view/>
     <!-- <Skills/> -->
