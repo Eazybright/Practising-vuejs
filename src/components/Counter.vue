@@ -3,6 +3,7 @@
     <h1>Count: {{count}}</h1>
     <button v-on:click="increment">Increment</button>
     <button v-on:click="decrement">Decrement</button>
+    <button v-on:click="incrementNTimes(5)">Increment 5 times</button>
   </div>
 </template>
 
@@ -41,6 +42,12 @@ export default {
         return false;
       }
       this.$store.commit('decrement')
+      console.log(this.$store.state.count)
+    },
+    incrementNTimes(n){
+      this.$store.commit('incrementNTimes', {
+        amount: n
+      })
       console.log(this.$store.state.count)
     }
   }

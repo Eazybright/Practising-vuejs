@@ -23,6 +23,10 @@ const store = new Vuex.Store({
     decrement (state) {
       state.count--
     },
+    //comit with a payload
+    incrementNTimes(state, payload){
+      state.count += payload.amount
+    }
   }
 })
 // store.commit('increment')
