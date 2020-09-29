@@ -1,10 +1,11 @@
 <template>
   <div id="app">
-    <!-- <img alt="Vue logo" src="./assets/logo.png"> --> 
+    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
       <nav>
         <router-link to="/">Home</router-link>
         <router-link to="/about/sule">About</router-link>
         <router-link to="/lifecycle">LifeCycle</router-link>
+        <router-link to="/counter">Counter</router-link>
       </nav>
     <router-view/>
     <!-- <Skills/> -->
@@ -33,7 +34,7 @@ export default {
     justify-items: center;
     align-items: center;
     padding-top: 50px;
-  } 
+  }
 
   body, html {
     margin: 0;

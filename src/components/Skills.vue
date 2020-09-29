@@ -28,7 +28,7 @@
 
       <!-- style binding with object -->
       <div v-bind:style="styleObject"></div>
-      
+
     </div>
 
     <div class="container">
@@ -42,7 +42,7 @@
           </transition>
         </ValidationProvider>
 
-        
+
         <!-- <p class="alert" v-if="errors.has('skill')">{{ errors.first('skill') }}</p> -->
         <!-- {{ skill }} -->
         <!-- <input type="checkbox" id="checkbox" v-model="checked"> -->
@@ -148,7 +148,7 @@ export default {
     padding: 0;
     list-style-type: none;
   }
-  
+
   .skill-set ul li {
     padding: 20px;
     font-size: 1.3em;
@@ -187,5 +187,3 @@ export default {
     height: 30px;
   }
 </style>
-
-

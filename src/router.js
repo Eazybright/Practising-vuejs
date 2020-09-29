@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Skills from './components/Skills.vue'
 import About from './components/About.vue'
 import LifeCycle from './components/LifeCycle.vue'
+import Counter from './components/Counter.vue'
 
 Vue.use(Router)
 
@@ -22,6 +23,11 @@ export default new Router({
       path: '/lifecycle',
       name: 'lifecycle',
       component: LifeCycle
+    },
+    {
+      path: '/counter',
+      name: 'counter',
+      component: Counter
     }
   ]
 })
