@@ -2,14 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import Vuex from 'vuex'
-// import VueRx from "vue-rx";
-// import { Observable, Subject } from "rxjs"
 
-// Use the VueRx plugin with the entire RxJS library
-// Vue.use(VueRx, {
-//   Observable,
-//   Subject
-// })
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
@@ -27,15 +20,32 @@ const store = new Vuex.Store({
     incrementNTimes(state, payload){
       state.count += payload.amount
     }
-  }
+  },
+  actions: {
+    incrementAsync ({ commit }) {
+     setTimeout(() => {
+       commit('increment')
+     }, 1000)
+   },
+   increment({ commit }) {
+     commit('increment')
+     console.log(this.state.count)
+   },
+   decrement({ commit }) {
+     if(this.state.count == 0){
+       return false;
+     }
+     commit('decrement')
+     console.log(this.state.count)
+   },
+   incrementNTimes({ commit }, n){
+     commit('incrementNTimes', {
+       amount: n
+     })
+     console.log(this.state.count)
+   }
+ }
 })
-// store.commit('increment')
-// store.commit('increment')
-// store.commit('increment')
-// store.commit('increment')
-// store.commit('increment')
-//
-// console.log(store.state.count)
 
 Vue.config.productionTip = false
 Vue.config.devtools = true
