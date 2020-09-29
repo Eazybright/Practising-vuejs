@@ -7,12 +7,30 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   computed: {
-    count () {
-      return this.$store.state.count
-    }
+    ...mapState([
+      'count'
+    ]),
   },
+    // arrow functions can make the code very succinct!
+    // count: state => state.count,
+
+    // passing the string value 'count' is same as `state => state.count`
+    // countAlias: 'count',
+
+    // to access local state with `this`, a normal function must be used
+    // countPlusLocalState (state) {
+    //   return state.count + this.localCount
+    // }
+    // {
+    //   count () {
+    //     return this.$store.state.count
+    //   }
+    // }
+
   methods: {
     increment() {
       this.$store.commit('increment')
