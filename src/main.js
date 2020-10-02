@@ -45,7 +45,7 @@ const store = new Vuex.Store({
     increment (state) {
       state.count++
     },
-    decrement (state) {
+    decrement (state) { 
       state.count--
     },
     //comit with a payload

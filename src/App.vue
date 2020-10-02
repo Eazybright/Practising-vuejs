@@ -6,6 +6,7 @@
         <router-link to="/about/sule">About</router-link>
         <router-link to="/lifecycle">LifeCycle</router-link>
         <router-link to="/counter">Counter</router-link>
+        <router-link to="/v-model">VModel</router-link>
       </nav>
     <router-view/>
     <!-- <Skills/> -->
