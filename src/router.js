@@ -5,6 +5,7 @@ import About from './components/About.vue'
 import LifeCycle from './components/LifeCycle.vue'
 import Counter from './components/Counter.vue'
 import VModel from './components/VModel.vue'
+import Iterations from './components/Iterations'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
       path: '/v-model',
       name: 'v-model',
       component: VModel
+    },
+    {
+      path: 'iterations',
+      name: 'iterations',
+      component: Iterations
     }
   ]
 })
