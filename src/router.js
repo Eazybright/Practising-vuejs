@@ -6,6 +6,7 @@ import LifeCycle from './components/LifeCycle.vue'
 import Counter from './components/Counter.vue'
 import VModel from './components/VModel.vue'
 import Iterations from './components/Iterations'
+import DOM_events from './components/DOM_events'
 
 Vue.use(Router)
 
@@ -37,9 +38,14 @@ export default new Router({
       component: VModel
     },
     {
-      path: 'iterations',
+      path: '/iterations',
       name: 'iterations',
       component: Iterations
+    },
+    {
+      path: '/dom-events',
+      name: 'DOM_events',
+      component: DOM_events
     }
   ]
 })

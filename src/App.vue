@@ -1,26 +1,24 @@
 <template>
   <div id="app">
-    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-      <nav>
-        <router-link to="/">Home</router-link>
-        <router-link to="/about/sule">About</router-link>
-        <router-link to="/lifecycle">LifeCycle</router-link>
-        <router-link to="/counter">Counter</router-link>
-        <router-link to="/v-model">VModel</router-link>
-      </nav>
+    <nav>
+      <router-link to="/">Home</router-link>
+      <router-link to="/about/sule">About</router-link>
+      <router-link to="/lifecycle">LifeCycle</router-link>
+      <router-link to="/counter">Counter</router-link>
+      <router-link to="/v-model">VModel</router-link>
+    </nav>
+    <nav>
+      <router-link to="/iterations">Iterations</router-link>
+      <router-link to="/dom-events">DOM-events</router-link>
+    </nav>
     <router-view/>
-    <!-- <Skills/> -->
   </div>
 </template>
 
 <script>
-// import Skills from './components/Skills.vue s9kBhuzqwzvQfvRCkgX-'
 
 export default {
-  name: 'App',
-  // components: {
-  //   Skills
-  // }
+  name: 'App'
 }
 </script>
 
