@@ -1,8 +1,8 @@
 <template>
   <div>
     <div>
-    <fancy-button></fancy-button>
-    <button>I'm another button!</button>
+      <fancy-button @buttonClicked="eventListener($event)" button-text="Click me!"></fancy-button>
+      <button>I'm another button!</button>
     </div>
     <div id="app">
       <nav>
@@ -28,6 +28,11 @@ export default {
   name: 'App',
   components:{
     FancyButton
+  },
+  methods: {
+    eventListener(message) {
+      console.log(`The button was clicked from the child component with this message: ${message}`);
+    }
   }
 }
 </script>
