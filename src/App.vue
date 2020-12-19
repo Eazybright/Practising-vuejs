@@ -10,6 +10,7 @@
     <nav>
       <router-link to="/iterations">Iterations</router-link>
       <router-link to="/dom-events">DOM-events</router-link>
+      <router-link to="/filters">Filters</router-link>
     </nav>
     <router-view/>
   </div>

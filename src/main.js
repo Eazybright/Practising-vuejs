@@ -2,7 +2,9 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import Vuex from 'vuex'
+import { convertDateToString } from './filters/date/date.filter'
 
+Vue.filter('date', convertDateToString)
 Vue.use(Vuex)
 
 const moduleA = {
