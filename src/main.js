@@ -3,6 +3,9 @@ import App from './App.vue'
 import router from './router'
 import Vuex from 'vuex'
 import { convertDateToString } from './filters/date/date.filter'
+// import FancyButton from './components/FancyButton.vue'
+
+// Vue.component('fancy-button', FancyButton)
 
 Vue.filter('date', convertDateToString)
 Vue.use(Vuex)

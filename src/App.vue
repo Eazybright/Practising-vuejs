@@ -1,25 +1,34 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link>
-      <router-link to="/about/sule">About</router-link>
-      <router-link to="/lifecycle">LifeCycle</router-link>
-      <router-link to="/counter">Counter</router-link>
-      <router-link to="/v-model">VModel</router-link>
-    </nav>
-    <nav>
-      <router-link to="/iterations">Iterations</router-link>
-      <router-link to="/dom-events">DOM-events</router-link>
-      <router-link to="/filters">Filters</router-link>
-    </nav>
-    <router-view/>
+  <div>
+    <div>
+    <fancy-button></fancy-button>
+    <button>I'm another button!</button>
+    </div>
+    <div id="app">
+      <nav>
+        <router-link to="/">Home</router-link>
+        <router-link to="/about/sule">About</router-link>
+        <router-link to="/lifecycle">LifeCycle</router-link>
+        <router-link to="/counter">Counter</router-link>
+        <router-link to="/v-model">VModel</router-link>
+      </nav>
+      <nav>
+        <router-link to="/iterations">Iterations</router-link>
+        <router-link to="/dom-events">DOM-events</router-link>
+        <router-link to="/filters">Filters</router-link>
+      </nav>
+      <router-view/>
+    </div>
   </div>
 </template>
 
 <script>
-
+import FancyButton from './components/FancyButton.vue'
 export default {
-  name: 'App'
+  name: 'App',
+  components:{
+    FancyButton
+  }
 }
 </script>
 
@@ -42,7 +51,7 @@ export default {
   }
 
   #app {
-      width: 50%;
+    width: 100%;
   }
 
   nav {
